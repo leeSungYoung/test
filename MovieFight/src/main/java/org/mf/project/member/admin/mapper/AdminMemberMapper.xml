@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="org.mf.project.member.admin.mapper.AdminMemberMapper">
+  	<select id="list" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+  		SELECT * FROM 
+  			(SELECT @ROWNUM := @ROWNUM + 1 AS rnum, m.* FROM 
+  				(SELECT * FROM member
+  					ORDER BY memKey desc) m,
+  					(SELECT @ROWNUM := 0) R) A
+  			WHERE A.rnum &gt;= #{start}
+  			AND A.rnum &lt;= #{end}
+  	</select>
+  	
+  	<select id="count" resultType="int">
+  		SELECT 
+  			count(memKey)
+  		FROM
+  			member
+  	</select>
+  </mapper>

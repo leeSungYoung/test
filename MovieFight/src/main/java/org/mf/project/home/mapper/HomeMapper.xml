@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mf.project.home.mapper.HomeMapper">
+
+	<select id="mf_list" resultType="java.util.HashMap">
+				SELECT 
+					se1.*, file2.fileModify right_pos
+				FROM 
+					(
+					SELECT 
+						mf.*,file1.fileModify left_pos
+					FROM 
+						movie_Fight mf, file file1
+					WHERE 
+						mf.mKey1 = file1.mKey
+					)se1, file file2 
+				WHERE 
+					se1.mKey2 = file2.mKey
+				ORDER BY 
+					mfKey DESC
+				LIMIT 
+					0,3
+	</select>
+
+</mapper>

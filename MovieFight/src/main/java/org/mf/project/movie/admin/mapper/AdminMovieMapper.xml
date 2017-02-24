@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.mf.project.movie.admin.mapper.AdminMovieMapper">
+
+	<insert id="insert" parameterType="java.util.HashMap">
+		insert into movie
+		values(
+				#{mKey},
+				#{mTitle},
+				#{mSummary},
+				#{mTrailer1},
+				#{mTrailer2},
+				#{mTrailer3}
+		)
+	</insert>
+	
+	<update id="update" parameterType="java.util.HashMap">
+	UPDATE
+		movie
+	SET
+		mSummary=#{mSummary},
+		mTrailer1=#{mTrailer1},
+		mTrailer2=#{mTrailer2},
+		mTrailer3=#{mTrailer3}
+	WHERE
+		mKey=#{mKey}
+	</update>
+	
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from movie where 
+		mKey = #{mKey}
+	</delete>
+	
+	<insert id="posInsert" parameterType="java.util.HashMap">
+		insert into file(mKey,fileModify)
+		values(
+			#{mKey},
+			#{newFileDir}
+		)
+	</insert>
+	
+	<delete id="posDelete" parameterType="java.lang.Integer">
+		delete from file where
+		mKey = #{mKey}
+	</delete>
+	
+	<select id="posSelect" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		select * from file where 
+		mKey = #{mKey}
+	</select>
+	
+	<insert id="ssInsert" parameterType="java.util.HashMap">
+		insert into stillShot(mKey,fileModify)
+		values(
+			#{mKey},
+			#{newFileDir}
+		)
+	</insert>
+	
+	<delete id="ssDelete" parameterType="java.lang.Integer">
+		delete from stillShot where
+		fileKey = #{fileKey}
+	</delete>
+	
+	<select id="ssAllSelect" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+		SELECT 
+			* 
+		FROM 
+			stillShot 
+		WHERE 
+			mKey = #{mKey}
+	</select>
+	
+	<select id="ssSelect" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		SELECT 
+			* 
+		FROM 
+			stillShot 
+		WHERE 
+			fileKey = #{fileKey}
+	</select>
+</mapper>

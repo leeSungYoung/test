@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.mf.project.movie.user.mapper.MovieDetailMapper">
+
+	<select id="movieDetail" resultType="java.util.HashMap">
+
+		select * from movie where
+		mKey = #{mKey}
+
+	</select>
+	<!-- 해당 영화키에 대한 영화정보 출력 -->
+	<select id="seletPoster" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+
+		select * from file
+		where mKey = #{mKey}
+	</select>
+	<!--해당 영화키에 대한 포스터의 주소 출력 -->
+	<select id="seletStillShot" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+		select * from stillshot
+		where mKey = #{mKey}
+	</select>
+	<!--해당 영화키에 대한 스틸컷 출력 -->
+	<insert id="setReply" parameterType="java.util.HashMap">
+		insert into m_reply (
+		memKey
+		,mKey
+		,memName
+		,reContent
+		,reDate
+		,reGood
+		) VALUES (
+		#{memKey}
+		,#{mKey}
+		,#{memName}
+		,#{reContent}
+		,DATE_FORMAT(now(), '%Y-%m-%d %H:%i:%s')
+		,0
+		)
+	</insert>
+	<!--리플 등록 -->
+	<select id="getReply" resultType="java.util.HashMap"
+		parameterType="java.util.HashMap">
+
+		select
+		memKey,memName,reContent,reDate,reGood from
+		m_reply where mKey=#{mKey} and
+		memKey=#{memKey}
+
+	</select>
+	<!--해당 영화키에 대한 리플 출력 -->
+	<select id="getAllReply" resultType="java.util.HashMap">
+
+		select
+		a.*
+		,b.star
+		from
+		m_reply
+		a,star b
+		where a.memKey = b.memKey and
+		a.mKey = b.mKey and
+		a.mKey=#{mKey}
+		order by reGood desc, reKey asc
+	</select>
+	<!--해당 영화키에 대한 전체 리플과 동일한 맴버키의 별점 출력 -->
+	<update id="upReply" parameterType="java.util.HashMap">
+		update m_reply set
+		memName=
+		#{memName}
+		,reContent= #{reContent}
+		,reDate= DATE_FORMAT(now(),
+		'%Y-%m-%d %H:%i:%s')
+		where
+		mKey= #{mKey} and memKey=#{memKey}
+	</update>
+	<!--해당영화키와 맴버키가 있는 리플 업데이트 -->
+	<update id="setGood" parameterType="java.util.HashMap">
+		update m_reply
+		set reGood =
+		reGood + 1 where reKey=#{reKey}
+	</update>
+	<!--덧글 좋아요 입력시 업데이트 -->
+	<insert id="setGoodName" parameterType="java.util.HashMap">
+		insert into m_good (
+		reKey
+		,memKey
+		) VALUES (
+		#{reKey}
+		,#{memKey}
+		)
+	</insert>
+	<!--덧글 좋아요 이름등록 -->
+	
+	<select id="checkGood" parameterType="java.util.HashMap"
+		resultType="int">
+		select memKey from m_reply where mKey=#{mKey} and
+		reKey=#{reKey}
+	</select>
+	<!-- 덧글 좋아요 동일인체크 -->
+	<select id="getGood" parameterType="java.util.HashMap"
+		resultType="int">
+		select reGood from m_reply where mKey=#{mKey} and
+		reKey=#{reKey}
+	</select>
+	<!-- 해당영화키,리플키에 해당하는 좋아요 출력 -->
+	<select id="getGoodName" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+		select * from m_good where reKey=#{reKey} and
+		memKey=#{memKey}
+	</select>
+	<!--해당영화키,리플키에 해당하는 이름출력 -->
+
+
+	<insert id="setStar" parameterType="java.util.HashMap">
+		insert into star (
+		memKey
+		,mKey
+		,star
+		) VALUES (
+		#{memKey}
+		,#{mKey}
+		,#{star}
+		)
+	</insert>
+	<!--별점 등록 -->
+
+
+	<select id="getStar" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+		select star from star where mKey=#{mKey} and
+		memKey=${memKey}
+	</select>
+
+	<!--별점 출력 -->
+	<select id="getAvgStar" parameterType="java.util.HashMap"
+		resultType="String">
+		select avg(star) from star where mKey=#{mKey}
+	</select>
+	<!--별점 평균 -->
+
+	<update id="upStar" parameterType="java.util.HashMap">
+		update star
+		set star =
+		#{star}
+		where mKey=#{mKey} and memKey=${memKey}
+	</update>
+	<!--별점 업데이트 -->
+
+	<select id="mStar" parameterType="java.util.HashMap" resultType="int">
+
+		select count(*)star from star where mKey=#{mKey}
+	</select>
+	<!--해당 영화의 별점 등록된 수 -->
+	<insert id="setZzim" parameterType="java.util.HashMap">
+
+		insert into zzim (
+		memKey
+		,mKey
+		) VALUES (
+		#{memKey}
+		,#{mKey})
+
+	</insert>
+	<!--찜한 영화 입력 -->
+	<select id="getZzim" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+
+		select zKey FROM zzim where mKey=#{mKey} and
+		memKey=#{memKey}
+
+	</select>
+	<!--찜한 영화 출력 -->
+	<select id="mZzim" parameterType="java.util.HashMap" resultType="int">
+		select count(*)zKey FROM zzim where mKey=#{mKey}
+	</select>
+	<!--해당 영화의 찜 등록 수 -->
+	<delete id="delZzim" parameterType="int">
+		DELETE FROM zzim WHERE
+		zKey=#{zKey}
+	</delete>
+	<!--등록찜 삭제 -->
+	<select id="moreCallIn" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+
+		select
+		a.*
+		,b.star
+		from
+		m_reply a,star b
+		where a.memKey =
+		b.memKey and
+		a.mKey = b.mKey
+		and a.mKey=#{mKey}
+		order by reGood desc,
+		reKey asc
+
+		limit #{stNum},4
+
+	</select>
+	<!--덧글 더보기 출력 -->
+
+	<select id="getMovieList" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+
+		select mKey, mTitle FROM movie
+		<if test="searchMovie!=null">
+			where mTitle like CONCAT('%', #{searchMovie}, '%')</if>
+		order by mkey asc limit #{seq},10
+
+	</select>
+	<!--영화 리스트 -->
+
+	<select id="getTotalMoveCnt" resultType="int" parameterType="java.util.HashMap">
+		select count(*)mKey from movie
+		<if test="searchMovie!=null">
+			where mTitle like CONCAT('%', #{searchMovie}, '%')</if>
+	</select>
+	<!--페이징 -->
+
+
+</mapper>

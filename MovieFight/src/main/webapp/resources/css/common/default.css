@@ -1,0 +1,246 @@
+@CHARSET "UTF-8";
+*:not(iframe):not(img) {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    color: #6d7988;
+}
+
+a {
+    color: rgb(109, 121, 137);
+    font-weight: bold;
+}
+
+p {
+    color: rgb(109, 121, 137);
+    font-weight: bold;
+}
+
+input[type=text],
+input[type=password] {
+    text-indent: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(109, 121, 137);
+    color: #6d7988;
+    font-weight: bold;
+    background-color: #faf8f5;
+}
+
+input.Title[type=text] {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+input[type=button],
+input[type=submit] {
+    min-width: 80px;
+    border-color: #faf8f5;
+    line-height: 25px;
+    color: rgb(109, 121, 137);
+    font-weight: bold;
+    border: 1px solid;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover {
+    background: rgb(109, 121, 137);
+    color: white;
+    border: 1px solid rgb(109, 121, 137);
+}
+
+input[type=text][class$=Text] {
+    width: 80%;
+    height: 30px;
+}
+
+textarea {
+    padding: 10px 10px 0 0;
+    text-indent: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(109, 121, 137);
+    color: rgb(109, 121, 137);
+    font-weight: bold;
+    resize: none;
+}
+
+body {
+    background-color: rgb(150, 150, 150);
+}
+
+body div.body_size {
+    width: 940px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #faf8f5;
+    overflow: hidden;
+}
+
+header.main_menu {
+    max-width: 100%;
+    height: 60px;
+    margin: 0 auto;
+}
+
+header.main_menu div {
+    height: 100%;
+    max-width: 100%;
+    border-bottom: 2px solid rgb(109, 121, 137);
+}
+
+header.main_menu ul {
+    margin-top: 16px;
+    line-height: 60px;
+    list-style: none;
+}
+
+header.main_menu ul.left_menu {
+    width: 80%;
+    float: left;
+}
+
+header.main_menu div.right_menu {
+    width: 18%;
+    float: right
+}
+
+header.main_menu ul li {
+    width: 70px;
+    height: 100%;
+    margin: 0 16px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(109, 121, 137);
+}
+
+header.main_menu ul.left_menu li {
+    height: 26px;
+    margin-top: 18px;
+    line-height: normal;
+    float: left;
+}
+
+header.main_menu div.right_menu ul li {
+    width: 90%;
+}
+
+header.main_menu ul li:hover {
+    background: rgb(109, 121, 137);
+    color: white;
+    cursor: pointer;
+}
+
+article {
+    padding: 20px 0;
+}
+
+header.main_menu div div.right_menu ul {
+    padding-top: 18px;
+    position: relative;
+    z-index: 200;
+}
+
+header.main_menu div div.right_menu ul li:hover {
+    background: rgb(109, 121, 137);
+    color: rgb(109, 121, 137);
+    border-bottom: 1px solid rgb(109, 121, 137);
+}
+
+header.main_menu div div.right_menu ul li {
+    height: 26px;
+    border-left: 1px solid rgb(109, 121, 137);
+    border-right: 1px solid rgb(109, 121, 137);
+    line-height: normal;
+}
+
+header.main_menu div div.right_menu ul li:last-child {
+    border-bottom: 1px solid rgb(109, 121, 137);
+}
+
+header.main_menu div div.right_menu ul li.down_menu {
+    display: none;
+}
+
+
+/*nav.sub_menu {
+    max-width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+nav.su_bmenu ul {
+    list-style: none;
+}
+
+nav.sub_menu ul li {
+    float: left;
+    margin: 10px 20px;
+}*/
+
+section.content_body {
+    width: 100%;
+    min-height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+section article {
+    max-width: 100%;
+    height: 100%;
+}
+
+footer {
+    max-width: 100%;
+    height: 100px;
+    color: rgb(109, 121, 137);
+}
+
+footer div {
+    margin: 10px 20px;
+    height: 100%;
+}
+
+div.clear {
+    clear: left;
+}
+
+div.BtnArea {
+    margin-top: 10px;
+    height: 30px;
+}
+
+div.mv_pos_box {
+    width: 245px;
+    height: 100%;
+    float: left;
+}
+
+div.mv_pos_box div.mv_pos_img {
+    height: 80%;
+    width: 100%;
+    line-height: 320px;
+}
+
+div.mv_pos_box div.mv_pos_img img#preview {
+    /*height: 100%;*/
+    max-height: 100%;
+    width: 100%;
+    /*max-width: 100%;*/
+    vertical-align: middle;
+}
+
+div.mv_pos_box div.mv_pos_btn {
+    padding-top: 20px;
+}
+
+div.mf_vs {
+    height: 100%;
+    float: left;
+    color: rgb(109, 121, 137);
+    font-size: 50px;
+    font-weight: bold;
+}

@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+div.mf_reList div.re_area {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    border: 1px solid rgb(109, 121, 137);
+    border-radius: 5px;
+    background-color: white;
+}
+
+div.mf_reList div.re_area div.non_rep{
+    margin: 100px 0;
+    text-align: center;
+}
+div.mf_reList div.re_area div.non_rep p{
+    font-size: 30px;
+}
+
+div.mf_reList div.re_area div.re_line {
+    width: 90%;
+    height: 60px;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(109, 121, 137);
+}
+
+div.mf_reList div.re_area div.re_line div.re_top div.re_top_middle {
+    float: left;
+}
+
+div.mf_reList div.re_area div.re_line div.re_top div.re_top_right {
+    min-width: 20px;
+    float: right;
+    text-align: center;
+}
+
+div.mf_reList div.re_area div.re_line div.re_top div.re_top_right img {
+    width: 15px;
+}
+
+div.mf_reList div.re_area div.re_line div.re_top div.re_top_right:hover {
+    cursor: pointer;
+    color: red;
+}
+
+div.mf_reList div.re_area div.re_line span {
+    font-size: 10px;
+    padding: 0 5px;
+    border-radius: 5px;
+    color: white;
+    background: red;
+}
+div.mf_reList div.re_area div.page_box {
+    text-align: center;
+}
+div.mf_reList div.re_area div.page_box a,
+div.mf_reList div.re_area div.page_box span.curPage {
+    margin: 0 10px;
+}
+
+div.mf_reList div.re_area div.page_box a{
+    font-weight: normal;
+}
+
+div.mf_reList div.re_area div.page_box span.curPage {
+    font-weight: bold;
+}

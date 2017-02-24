@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.mf.project.mf.user.mapper.MovieFightMapper">
+	<select id="mlist" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		SELECT
+			*
+		FROM
+			(
+			SELECT
+				@ROWNUM := @ROWNUM + 1 AS rnum, se2.*
+			FROM
+				(
+				SELECT
+					se1.*, file2.fileModify right_pos
+				FROM
+					(
+					SELECT
+						mf.*,file1.fileModify left_pos
+					FROM
+						movie_Fight mf, file file1
+					WHERE
+						mf.mKey1 = file1.mKey
+						<if test="searchText != null">
+						AND
+						mf.mfTitle LIKE CONCAT('%',#{searchText},'%')
+						</if>
+					)se1, file file2
+				WHERE
+					se1.mKey2 = file2.mKey
+				ORDER BY
+					se1.mfKey DESC
+				) se2,(SELECT @ROWNUM := 0) R
+			) A
+		WHERE
+			A.rnum &gt;= #{start}
+		AND
+			A.rnum &lt;= #{end}
+	</select>
+	<!-- -->
+	<select id="content" parameterType="int" resultType="java.util.HashMap">
+		SELECT
+		se1.*, m2.mTitle mTitle2 ,file2.fileModify right_pos
+		FROM (SELECT
+		mf.*, m1.mTitle mTitle1,file1.fileModify left_pos
+		FROM movie_Fight mf, file file1, movie m1
+		WHERE mf.mfKey = #{mfKey} AND mf.mKey1 = file1.mKey AND mf.mKey1 = m1.mKey)
+		se1,
+		file file2, movie m2
+		WHERE se1.mKey2 = file2.mKey AND se1.mKey2 = m2.mKey
+	</select>
+
+	<select id="haveVote" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+		SELECT 
+			* 
+		FROM 
+			vote
+		WHERE
+			mfKey = #{mfKey} 
+		AND
+			memKey = #{memKey}
+	</select>
+
+	<select id="getVote" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+		SELECT 
+			mKey, COUNT(*) count 
+		FROM 
+			vote 
+		WHERE
+			mfKey = #{mfKey}
+		GROUP BY 
+			mKey
+	</select>
+
+	<insert id="setVote" parameterType="java.util.Map">
+		INSERT INTO vote(memKey,
+		mfKey, mKey)
+		VALUES(
+		#{memKey},
+		#{mfKey},
+		#{mKey}
+		)
+	</insert>
+
+	<insert id="insertRep" parameterType="java.util.HashMap">
+		<selectKey keyProperty="mKey" resultType="int" order="BEFORE">
+			SELECT
+			mKey FROM vote where
+			mfKey = #{mfKey} AND
+			memKey = #{memKey}
+		</selectKey>
+		INSERT INTO mf_Reply(memKey,mfKey,mKey,repName,repContent)
+		VALUES(
+		#{memKey},
+		#{mfKey},
+		#{mKey},
+		#{memName},
+		#{repContent}
+		)
+
+	</insert>
+
+	<update id="updateRep" parameterType="java.util.HashMap">
+		UPDATE mf_Reply SET
+		repContent = #{repContent}
+		WHERE
+		mfKey = #{mfKey} AND
+		memKey = #{memKey}
+	</update>
+
+	<select id="haveRep" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+		SELECT * from mf_Reply
+		WHERE
+		mfKey = #{mfKey} and
+		memKey =
+		#{memKey}
+	</select>
+
+	<select id="userRep" parameterType="java.util.HashMap"
+		resultType="String">
+		SELECT repContent FROM mf_Reply
+		WHERE
+		mfKey = #{mfKey} AND
+		memKey = #{memKey}
+	</select>
+
+	<select id="repList" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+		SELECT * FROM mf_Reply
+		WHERE
+		mfKey = #{mfKey}
+		<if test='order.equalsIgnoreCase("left")'>
+			AND mKey = #{mKey1}
+		</if>
+		<if test='order.equalsIgnoreCase("right")'>
+			AND mKey = #{mKey2}
+		</if>
+		<if test='sort.equalsIgnoreCase("repKey")'>
+			ORDER BY repKey desc
+		</if>
+		<if test='sort.equalsIgnoreCase("repGood")'>
+			AND
+			repGood >= 10
+			ORDER BY repGood DESC
+		</if>
+		LIMIT
+			0,5
+	</select>
+	
+	<select id="selfCheck" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		SELECT
+			*
+		FROM
+			mf_Reply
+		WHERE
+			repKey = #{repKey}
+		AND
+			memKey =#{memKey}
+	</select>
+
+	<select id="haveGood" parameterType="java.util.HashMap"
+		resultType="java.util.HashMap">
+		SELECT 
+			* 
+		FROM
+			 mf_Good
+		WHERE
+			repKey = #{repKey} 
+		AND
+			memKey =#{memKey}
+	</select>
+
+	<insert id="reGood" parameterType="java.util.HashMap">
+		INSERT INTO
+		mf_Good(repKey,memKey)
+		VALUES(
+		#{repKey},#{memKey}
+		)
+	</insert>
+
+	<update id="repGoodup" parameterType="java.util.HashMap">
+		UPDATE mf_Reply
+		SET
+		repGood =
+		repGood+1
+		WHERE
+		repKey = #{repKey}
+	</update>
+
+	<select id="reply" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		SELECT
+			*
+		FROM
+			mf_Reply
+		WHERE
+			mfKey=#{mfKey}
+			AND
+			mKey=#{mKey}
+		ORDER BY
+			repKey DESC
+		LIMIT
+			#{start}, 10
+	</select>
+	
+	<select id="count" resultType="int" parameterType="java.util.HashMap">
+		SELECT
+			COUNT(mfKey)
+		FROM
+			movie_Fight
+		<if test="searchText != null">
+			WHERE
+				mfTitle LIKE CONCAT('%',#{searchText},'%')
+		</if>
+	</select>
+	
+	<select id="replyCount" parameterType="java.util.HashMap" resultType="int">
+		SELECT
+			COUNT(repKey)
+		FROM
+			mf_Reply
+		WHERE
+			mfKey=#{mfKey}
+		AND
+			mKey=#{mKey}
+	</select>
+</mapper>

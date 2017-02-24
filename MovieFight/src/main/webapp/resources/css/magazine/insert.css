@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+div.mag_top {
+    width: 70%;
+    height: 70px;
+    margin: 10px auto 10px auto;
+}
+
+form#mag_form div.BtnArea {
+    text-align: right;
+    margin-right: 20px;
+}
+
+form#mag_form div.mag_middle {
+    width: 100%;
+    text-align: center;
+}
+
+form#mag_form div.mag_middle div.mag_middle_box {
+    width: 95%;
+    margin: 0 auto;
+}

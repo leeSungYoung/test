@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+#delete {
+	background-color: #D5D5D5;
+	height: 100px;
+	width: 450px;
+}
+
+#msg {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+}

@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+
+div.joinStep_body {
+	width: 100%;
+	height: 100%;
+}
+
+div.joinStep_body table.joinStep_box {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 200px;
+	color: rgb(109, 121, 137);
+	font-size: 22px;
+	font-weight: bold;
+}
+
+div.joinStep_body table.joinStep_box tr {
+	height: 40px;
+}
+
+div.joinStep_body table.joinStep_box tr:first-child {
+	text-align: center;
+}
+
+div.joinStep_body table.joinStep_box tr:last-child {
+	text-align: center;
+}
+
+div.joinStep_body table.joinStep_box input[type=password] {
+	width: 70%;
+	font-size: 22px;
+}
+
+div.checkPW_body table.checkPW_box input[type=text] {
+	width: 80%;
+	font-size: 22px;
+}

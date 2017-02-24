@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+
+div.login_body {
+	width: 100%;
+	height: 150px;
+}
+
+div.login_body div.login_box {
+	margin: 0 auto;
+	margin-top: 200px;
+	width: 70%;
+	height: 300px;
+	text-align: center;
+}
+
+div.login_body div.login_box table.login_form {
+	width: 70%;
+	margin: 0 auto;
+}
+
+div.login_body div.login_box table.login_form td {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: rgb(109, 121, 137);
+}
+
+div.login_body div.login_box table input[type=text], div.login_body div.login_box table input[type=password]
+	{
+	width: 100%;
+	font-size: 22px;
+}
+
+div.login_body div.login_box table  td.login_err {
+	color: #FF6C6C;
+}
+/*div.login_body div.login_box div.login_message {
+                            width: 60%;
+                            ght: 30px;
+                            margin: 0 auto;
+                        }*/
+div.login_body div.login_box p a:first-child {
+	padding-left: 10px;
+}
+
+div.login_body div.login_box div.login_btn {
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;
+}

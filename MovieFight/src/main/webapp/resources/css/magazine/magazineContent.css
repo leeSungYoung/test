@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+
+#container {
+	position: static;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+#main {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+div#main div.magazine_main {
+	width: 90%;
+	min-height: 800px;
+	margin: 0 auto;
+	float: center;
+}
+
+.magazine_title {
+	display: block;
+	max-width: 930px;
+	margin: 0 auto;
+	font-weight: 400;
+	font-size: 34px;
+	text-align: center;
+	line-heigt: 45px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: silver;
+}
+
+.magazine_view_count {
+	text-align: right;
+	font-size: 18px;
+}
+
+.magazine_content {
+	overflow: visible;
+	display: block;
+	max-width: 900px;
+	margin: 20px auto;
+	clear: both;
+	text-align: center;
+}
+
+.magazine_content_view {
+	font-size: 18px;
+}
+
+div.magazine_content_view div.magazine_content_data {
+	width: 100%;
+	word-break: break-all;
+	padding-bottom: 60px;
+}
+
+.magazine_date {
+	font-size: 18px;
+	text-align: right;
+	margin-top: 20px;
+}
+
+.magazine_list {
+	font-size: 18px;
+	text-align: right;
+	margin-top: 10px;
+}
+
+.magazine_good {
+	display: block;
+	float: center;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: silver;
+}
+
+.magazine_good_image {
+	display: block;
+	width: 90px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.magazine_good_button {
+	display: block;
+	width: 90px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.admin_option {
+    height: 30px;
+    text-align: right;
+}

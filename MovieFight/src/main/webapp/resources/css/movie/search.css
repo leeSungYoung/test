@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+div.search_body {
+    width: 700px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #faf8f5;
+    overflow: hidden;
+}
+
+div.search_top {
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+div.search_top input[type=text] {
+    width: 80%;
+}
+
+div.search_middle {
+    padding: 0 10px 0 10px;
+}
+
+div.search_middle table.search_view {
+    width: auto;
+    border-collapse: collapse;
+}
+
+div.search_middle table.search_view tr {
+    height: 40px;
+    text-align: center;
+}
+
+div.search_middle table.search_view tr:first-child td {
+    border-bottom: 2px solid;
+}
+
+div.search_middle table.search_view td {
+    width: 10%;
+}
+
+div.search_middle table.search_view td:first-child {
+    width: 10%;
+}
+
+div.search_middle table.search_view td.movie_title {
+    width: auto;
+}
+
+div.search_footer {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+
+div.search_footer div.page_box a,
+div.search_footer div.page_box span.curPage {
+    margin: 0 10px;
+}
+
+div.search_footer div.page_box a{
+    font-weight: normal;
+}
+
+div.search_footer div.page_box span.curPage {
+    font-weight: bold;
+}

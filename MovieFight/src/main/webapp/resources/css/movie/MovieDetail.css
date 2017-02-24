@@ -1,0 +1,388 @@
+@CHARSET "UTF-8";
+.wallpaper {
+    width: 936px;
+    height: 200px;
+    background-color: #faf8f5;
+    z-index: 1;
+    float: left;
+    border-bottom: 1px solid #93939c;
+}
+
+.admin {
+    margin-top: 10px;
+    padding-left: 750px;
+    position: absolute;
+    z-index: 100;
+}
+
+.poster {
+    width: 220px;
+    height: 314.28px;
+    border: 3px solid #ddd;
+    border-radius: 7px;
+    position: relative;
+    left: 20px;
+    bottom: 130px;
+    z-index: 2;
+    float: left;
+}
+
+.info {
+    width: 626px;
+    height: 41px;
+    position: relative;
+    right: 20px;
+    z-index: 2;
+    float: right;
+    border-bottom: 1px solid #93939c;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    width: 430px;
+    height: 35px;
+    z-index: 3;
+}
+
+.desc {
+    font-size: 14px;
+    color: #93939c;
+    width: 626px;
+    height: 21px;
+    position: relative;
+    right: 20px;
+    z-index: 2;
+    float: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 626px;
+}
+
+.desc2 {
+    width: 626px;
+    height: 21px;
+    position: relative;
+    right: 20px;
+    z-index: 2;
+    float: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.number {
+    width: auto;
+    height: 13px;
+    font-size: 14px;
+    color: #93939c;
+}
+
+.totalstar {
+    width: auto;
+    height: 14px;
+    font-size: 10px;
+    color: #93939c;
+}
+
+.count {
+    font-size: 14px;
+    color: #93939c;
+    width: 626px;
+    height: 21px;
+    position: relative;
+    right: 20px;
+    z-index: 2;
+    float: right;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.zzim {
+    color: #93939c;
+    width: 65px;
+    height: 20px;
+    float: right;
+    padding-right: 15px;
+}
+
+.zzim:hover {
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    color: red;
+}
+
+.Star {
+    width: 400px;
+    height: 30px;
+}
+
+.leftRight {
+    width: 940px;
+    height: auto;
+    background-color: #faf8f5;
+    float: left;
+}
+
+.left {
+    width: 645px;
+    height: auto;
+    min-height: 930px;
+    background-color: #faf8f5;
+    padding-left: 40px;
+    float: left;
+    border-bottom-left-radius: 7px;
+}
+
+.right {
+    width: 190px;
+    height: 900;
+    min-height: 900px;
+    background-color: #faf8f5;
+    float: left;
+    border-left: 1px solid #93939c;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    border-bottom-right-radius: 7px;
+}
+
+.summary {
+    width: 500px;
+    min-height: 150px;
+    height: 100%;
+    float: left;
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+.story {
+    font-size: 12px;
+    width: 590px;
+    height: 100%;
+    float: left;
+}
+
+.reply {
+    width: 630px;
+    height: auto;
+    float: left;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.reply div.moreCallIn {
+    text-align: center;
+}
+
+.review {
+    width: 505px;
+    height: auto;
+    float: left;
+    border-radius: 7px;
+    border: 1px solid #93939c;
+    border-color: #93939c;
+    background-color: white;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    padding: 10px;
+    padding-right: 20px;
+    background-color: white;
+    border-color: #93939c;
+    background-color: white;
+    background-color: white;
+}
+
+.reviewStar {}
+
+.name {
+    width: 530px;
+    height: auto;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.text {
+    width: 505px;
+    height: auto;
+    margin-left: 25px;
+    color: #555555;
+}
+
+.reviewFoot {
+    width: auto;
+    float: right;
+}
+
+.updateDay {
+    font-size: 10px;
+    width: 15px;
+    color: #93939c;
+    margin-bottom: 10px;
+}
+
+.goodTotal {
+    font-size: 10px;
+    width: 15px;
+    color: #93939c;
+    margin-left: 14px;
+    margin-bottom: 10px;
+}
+
+.goodImg {
+    resize: resize: both;
+    max-width: 15px;
+    height: auto;
+}
+
+.goodImg:hover {
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+.goodNum {
+    font-size: 10px;
+    width: 15px;
+    color: #93939c;
+    margin-right: 14px;
+    margin-left: 5px;
+    margin-top: 5px;
+    float: right;
+}
+
+.tag1 {
+    border-radius: 50%;
+    background-color: #93939c;
+    height: 42px;
+    width: 42px;
+    z-index: 1;
+    float: left;
+    width: 42px;
+}
+
+.tag2 {
+    border-radius: 50%;
+    border: 10px;
+    border-color: #93939c;
+    height: 40px;
+    width: 40px;
+    margin-left: 1px;
+    margin-top: 1px;
+    z-index: 1;
+    float: left;
+    z-index: 1
+}
+
+.myContext {
+    height: 150px;
+    border-bottom: 1px solid #93939c;
+}
+
+.textarea {
+    width: 450px;
+    height: 70px;
+    resize: none;
+    margin-left: 12px;
+    border-radius: 7px;
+    float: left;
+}
+
+.trailer {
+    width: 190px;
+    height: 130px;
+    background-color: #faf8f5;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: black;
+}
+
+.trailer:hover {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    background-color: black;
+}
+
+#trailer {
+    width: 190px;
+    height: 130px;
+}
+
+.director {
+    font-size: 14px;
+    width: 190px;
+    height: auto;
+}
+
+.acter {
+    font-size: 14px;
+    width: 190px;
+    height: auto;
+}
+
+.layer {
+    display: none;
+    position: fixed;
+    _position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.layer .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+.layer .pop-layer {
+    display: block;
+}
+
+.pop-layer {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 750px;
+    height: auto;
+    background-color: black;
+    z-index: 10;
+}
+
+.pop-layer .pop-container {}
+
+.pop-layer p.ctxt {
+    color: #666;
+    line-height: 25px;
+}
+
+.pop-layer .btn-r {
+    width: 100%;
+    margin: 10px 0 20px;
+    text-align: right;
+}
+
+a.cbtn {
+    display: inline-block;
+    height: 25px;
+    padding: 0 14px 0;
+    border: 1px solid #7b7b7b;
+    background-color: #7b7b7b;
+    font-size: 13px;
+    color: #fff;
+    line-height: 25px;
+    margin-right: 10px;
+}
+
+a.cbtn:hover {
+    border: 1px solid #242424;
+    background-color: #242424;
+    color: #fff;
+}

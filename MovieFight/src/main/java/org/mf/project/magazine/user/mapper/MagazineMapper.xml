@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mf.project.magazine.user.mapper.MagazineMapper">
+	<!-- 매거진 리스트 select -->
+	<select id="magazineList" resultType="java.util.HashMap">
+		SELECT 
+			magKey,
+			magTitle,
+			magSubTitle,
+			magContent,
+			date_format(magDate, '%b/%e, %Y')AS	magDate, 
+			magHit,
+			magGood
+			
+		FROM
+			magazine
+			
+		ORDER BY magkey DESC
+						
+	</select>
+	
+	<!-- 매거진 리스트 select -->
+	<select id="magazineListPage" resultType="java.util.HashMap" parameterType="Integer">
+		SELECT 
+			magKey,
+			magTitle,
+			magSubTitle,
+			date_format(magDate, '%b/%e, %Y')AS	magDate, 
+			magHit,
+			magImg
+			
+		FROM
+			magazine
+	<!-- magKey 기준으로 내림차순 -->				
+		ORDER BY magKey DESC
+	<!-- {page}수만큼 빼고 10개씩 출력 -->		
+		LIMIT 10 OFFSET #{page}	
+		
+	</select>
+	
+	<!-- 매거진 리스트 select (조회순) -->
+	<select id="magazineListHitPage" resultType="java.util.HashMap">
+		SELECT 
+			magKey,
+			magTitle,
+			magSubTitle,
+			date_format(magDate, '%b/%e, %Y')AS	magDate, 
+			magHit,
+			magImg
+			
+		FROM
+			magazine
+	<!-- magHit 기준으로 내림차순 -->		
+		ORDER BY magHit DESC
+	<!-- {page}수만큼 빼고 10개씩 출력 -->	
+		LIMIT 10 OFFSET #{page}
+		
+						
+	</select>
+	
+	<!-- 전체 게시물 개수 select -->
+	<select id="getRow" resultType="java.lang.String">
+	<!-- RM 값이 null 일 경우 0을 출력하고, 값이 있으면 RM 값을 출력 -->
+		SELECT ifnull(RM, 0)
+		FROM(
+	<!-- T1과 R에서 데이터를 가져올때마다 RNUM에 +1을 해줌, 가장큰 RNUM을 출력, RM이라고 명명 -->
+    		SELECT MAX(@RNUM:=@RNUM+1) AS RM
+    <!-- magazine select 를 T1이라고 명명, RNUM이라는 변수에 0 값을 지정해줌 R이라고 명명-->		
+    		FROM (select * from magazine) AS T1, (SELECT @RNUM:=0) AS R 
+			)  AS T2 
+  		ORDER BY RM DESC;
+  		
+	</select>
+	
+	<!-- 매거진 내용 select -->
+	<select id="magazineContent" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+		SELECT 
+			magKey,
+			magTitle,
+			magSubTitle,
+			magContent,
+			date_format(magDate, '%b/%e, %Y')AS	magDate, 
+			magHit,
+			magImg
+			
+		FROM
+			magazine
+	<!-- magkey(pk)에 해당하는 데이터 출력 -->		 
+		WHERE
+			MAGKEY = #{magkey}
+	</select>
+	
+	<!-- magkey에 해당하는 게시물 조회수 update -->
+	<update id="updateMagHit" parameterType="java.util.HashMap">
+		UPDATE magazine
+		
+		 SET
+		  magHit = magHit + 1
+		  
+		 WHERE
+		  MAGKEY = #{magkey}
+		  
+	</update>
+	
+</mapper>

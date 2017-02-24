@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+div.checkPW_body {
+	width: 100%;
+}
+
+div.checkPW_body table.checkPW_box {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 300px;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+div.checkPW_body table.checkPW_box tr {
+	height: 40px;
+	
+}
+
+div.checkPW_body table.checkPW_box tr.checkPW_input td:first-child {
+	text-align: right;
+}
+
+div.checkPW_body table.checkPW_box tr.checkPW_input td:last-child {
+	text-align: left;
+	text-indent: 20px;
+}
+
+div.checkPW_body table.checkPW_box input[type=text] {
+	width: 80%;
+	font-size: 22px;
+}
+
+div.checkPW_body table.checkPW_box input[type=password] {
+	width: 80%;
+	font-size: 22px;
+}
+
+#login_err {
+	color: #FF6C6C;
+	
+	
+}

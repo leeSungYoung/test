@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+div.mf_top {
+    width: 100%;
+    height: 90px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+div.mf_top div {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.mf_top div div {
+    width: 100%;
+    text-align: right;
+}
+
+div.mf_top div div input.mfVDate {
+    margin-top: 10px;
+    text-align: right;
+    border: none;
+}
+
+div.mf_middle {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.mf_middle div.mf_middle_box {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+div.mf_middle div.mf_middle_box div.mf_vs {
+    width: 34%;
+    line-height: 400px;
+}
+
+div.mf_footer {
+    width: 100%;
+    height: 400px;
+}
+
+div.mf_footer textarea {
+    width: 95%;
+    height: 96%;
+    margin: 0 10px;
+}
+
+form#mf_form div.BtnArea {
+    text-align: right;
+    margin-right: 20px;
+}

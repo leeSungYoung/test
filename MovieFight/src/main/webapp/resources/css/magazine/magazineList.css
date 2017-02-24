@@ -1,0 +1,129 @@
+@CHARSET "UTF-8";
+
+#container {
+	position: static;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+#main {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+div#main div.magazine_list_box {
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.movie_magazine {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.magazine_array {
+	width: 100%;
+	height: 20px;
+	margin-top: 10px;
+	text-align: right;
+}
+
+.magazine_headline {
+	width: 100%;
+	height: 40px;
+	margin: 0 auto;
+	font-size: 22px;
+	font-weight: bold;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: silver;
+}
+
+.magazine_table {
+	width: 100%;
+	height: 155px;
+	margin: 0 auto;
+	list-style: none;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: silver;
+}
+
+.magazine_list {
+	width: 100%;
+	height: 144px;
+	margin: 5px 0px;
+	list-style: none;
+}
+
+
+.magazineList_img {
+	width: 230px;
+	height: 140px;
+	margin: 2px 0px;
+	padding: 5px;
+	float: left;
+}
+
+.my-image {
+	width: auto;
+	height: 135px;
+	display: block;
+	margin: 0 auto;
+}
+
+.magazine_img {
+	height: 130px;
+	padding: 5px;
+	display: block;
+	margin: 0 auto;
+	
+}
+
+.running_poster {
+	width: 200px;
+}
+
+.magazine_desc {
+	width: 590px;
+	height: 140px;
+	margin: 0 auto;
+	vertical-align: middle;
+	padding: 5px;
+	float: right;
+}
+
+.magazine_title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.magazine_page {
+	width: 100%;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 15px;
+	font-size: 22px;
+	text-align: center;
+}
+
+.magazine_page span a{
+    font-weight: normal;
+}
+.magazine_page span#curPage{
+    font-weight: bold;
+}
+
+.admin_option {
+    height: 30px;
+    text-align: right;
+    display: inline-block;
+}
+
+

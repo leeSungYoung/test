@@ -1,0 +1,161 @@
+@CHARSET "UTF-8";
+
+#container {
+	position: static;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+dt {
+	display: inline;
+}
+
+dd {
+	display: inline;
+	margin-left: 0px;
+}
+
+#main {
+	width: 940px;
+	height: auto;
+	margin: 0 auto;
+}
+
+.my-image {
+	width: 150px;
+	height: auto;
+}
+
+.running_poster {
+	max-width: 100px;
+    max-height: 140px;
+}
+
+.movie_line {
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+	padding-left: 45px;
+	float: left;
+	padding-bottom: 20px;
+}
+
+.movie_headline {
+	width: 940px;
+	height: 40px;
+	margin: 10px auto;
+	font-size: 22px;
+	font-weight: bold;
+	text-indent: 50px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: silver;
+}
+.movie_headline img{
+    width: 12px;
+    margin-left: 10px;
+}
+
+.movie_table {
+	width: 50%;
+	height: 155px;
+	float: left;
+	margin: 0 auto;
+	list-style: none;
+}
+
+.movie_list {
+	width: 100%;
+	height: 154px;
+	margin: 0 auto;
+	list-style: none;
+	border-bottom-style: dotted;
+	border-bottom-width: 0.5px;
+	border-bottom-color: silver;
+    position: relative;
+}
+
+.movie_list div.movie_rank{
+    width: 20px;
+    background: white;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.movie_img {
+	max-width: 100px;
+	max-height: 140px;
+	margin: 0 auto;
+	padding: 5px;
+	float: left;
+}
+
+.movie_desc {
+	width: 300px;
+	height: 140px;
+	margin: 0 auto;
+	vertical-align: middle;
+	padding: 5px;
+	float: right;
+}
+
+.movie_title {
+	font-size: 20px;
+}
+
+dt.tit_t1 {
+	float: left;
+	clear: both;
+	overflow: hidden;
+	width: 31px;
+	height: 18px;
+	margin-top: 1px;
+	background: url(http://static.naver.net/movie/2014/02/sp_lst_tit.png)
+		no-repeat;
+	text-indent: -99999em;
+	background-position: -110px 0;
+}
+
+dt.tit_t2 {
+	float: left;
+	clear: both;
+	overflow: hidden;
+	width: 31px;
+	height: 18px;
+	margin-top: 1px;
+	background: url(http://static.naver.net/movie/2014/02/sp_lst_tit.png)
+		no-repeat;
+	text-indent: -99999em;
+	background-position: -150px 0;
+}
+
+dt.tit_t3 {
+	float: left;
+	clear: both;
+	overflow: hidden;
+	width: 31px;
+	height: 18px;
+	margin-top: 1px;
+	background: url(http://static.naver.net/movie/2014/02/sp_lst_tit.png)
+		no-repeat;
+	text-indent: -99999em;
+	background-position: -190px 0;
+}
+
+dd.fontedit {
+	font-size: 6px;
+}
+
+.split {
+	margin: 0 5px;
+	font-family: dotum, sans-serif;
+	font-size: 13px;
+	color: #dedede;
+}
