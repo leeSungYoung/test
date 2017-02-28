@@ -40,7 +40,7 @@
 
 					<c:forEach items="${stillShot}" var="st" varStatus="status"
 						begin="0" step="1">
-						<img src="${st.fileModify}">
+						<img src="${st.fileModify}" onerror="this.src='/resources/images/common/no_image_found.jpg'">
 					</c:forEach>
 
 				</div>
