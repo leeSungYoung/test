@@ -17,7 +17,6 @@
 	<section class="content_body" style="height: auto;">
 		<article style="height: auto;">
 		
-	
 		
 <c:if test="${memLevel=='ADMIN'}">
 			<div class="admin">
@@ -26,6 +25,8 @@
 			</div>
 
 </c:if>
+			
+			
 			
 			
 	
